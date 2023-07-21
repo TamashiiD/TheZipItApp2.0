@@ -3,12 +3,12 @@ import { useQuery } from "convex/react";
 import { api } from "../convex/_generated/api";
 import { useMutation } from "convex/react";
 import Badge from 'react-bootstrap/Badge'
-import { useState } from "react";
-
+import { ChangeEvent, FormEventHandler, useState } from "react";
+import { FormEvent } from "react";
 
 function App() {
 
-  const [statement, setStatment] = useState("")
+  const [statement, setStatement] = useState("")
   const [button, setButtonOn] = useState(true)
 
   const characterLimit = 280
@@ -17,22 +17,25 @@ function App() {
   const postsomething = useMutation(api.sentiment.createSentiment)
 
 
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
+  const handleSubmit: FormEventHandler<HTMLFormElement> = (e) => {
+    e.preventDefault();
     postsomething({ text: statement })
-  }
+    // Your form submission logic here
+  };
 
-  const handleChange = (e) => {
-    e.preventDefault()
-    setStatment(e.target.value)
-    if (statement.length <= characterLimit) {
-      setButtonOn(false)
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const newStatement = e.target.value;
+    const characterLimit = 100;
+
+    setStatement(newStatement);
+
+    if (newStatement.length <= characterLimit) {
+      setButtonOn(false);
     }
-    if (statement.length > characterLimit - 1) {
-      setButtonOn(true)
+    if (newStatement.length > characterLimit - 1) {
+      setButtonOn(true);
     }
-  }
+  };
 
 
 

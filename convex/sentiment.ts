@@ -14,7 +14,7 @@ export const get = query({
 export const createSentiment = mutation({
   args: { text: v.string() },
   handler: async (ctx, args) => {
-    const sentimentID = await ctx.db.insert("sentiment", { text: args.text });
+    await ctx.db.insert("sentiment", { text: args.text });
     // do something with `taskId`
   },
 });

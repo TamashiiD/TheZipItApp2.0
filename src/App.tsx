@@ -4,7 +4,6 @@ import { api } from "../convex/_generated/api";
 import { useMutation } from "convex/react";
 import Badge from 'react-bootstrap/Badge'
 import { ChangeEvent, FormEventHandler, useState } from "react";
-import { FormEvent } from "react";
 
 function App() {
 

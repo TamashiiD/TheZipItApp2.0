@@ -47,10 +47,9 @@ function App() {
   return (
     <div className="App">
       <div>What People Are Saying:</div>
-
       <div className="bodybox">
         <div id='chatboarder'>
-          {feeling?.slice(0, 10).map(({ _id, text, datetime }) => (
+          {feeling?.map(({ _id, text, datetime }) => (
             <div className="chatlog" key={_id}>{text}&nbsp;{datetime}</div>
           ))}
         </div>

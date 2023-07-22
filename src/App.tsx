@@ -48,12 +48,11 @@ function App() {
 
 
    useEffect(() => {
-    if (newmessage.length) {
       ref.current?.scrollIntoView({
         behavior: "smooth",
         block: "end",
       });
-    }
+    
   }, [newmessage.length]);
 
   
@@ -63,10 +62,12 @@ function App() {
       <div id='chatboarder' className="bodybox scroll"> 
         <div >
           {feeling?.map(({ _id, text, datetime }) => (
-            <div className="chatlog" key={_id}>{datetime}&nbsp;{text}</div>
+            <div className="chatlog" key={_id}>
+              <div className="dateandtime">{datetime}</div>&nbsp;
+              {text}</div>
           ))}
-          <div ref={ref}/>
         </div>
+        <div ref={ref}/>
       </div>
       <form onSubmit={handleSubmit}>
         <label>I've been holding back! What I really wanna say is...&nbsp;</label>
@@ -78,7 +79,6 @@ function App() {
           {statement.length}/{characterLimit}
         </Badge>
         <button
-       
           disabled={button}>
           Share and then Zip It.
         </button>

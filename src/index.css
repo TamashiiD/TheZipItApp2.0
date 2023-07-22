@@ -66,6 +66,9 @@ button:focus-visible {
 .chatlog {
   font: 20px arial, sans-serif;
 }
+.dateandtime{
+  font: 10px italic;
+}
 
 .scroll {
   width: 600px;

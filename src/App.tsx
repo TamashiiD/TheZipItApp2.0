@@ -64,7 +64,7 @@ function App() {
           {feeling?.map(({ _id, text, datetime }) => (
             <div className="chatlog" key={_id}>
               <div className="dateandtime">{datetime}</div>&nbsp;
-              <div>{text}</div>
+              <div className="messageboarder">{text}</div>
             </div>
           ))}
         </div>

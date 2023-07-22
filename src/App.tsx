@@ -47,8 +47,8 @@ function App() {
   return (
     <div className="App">
       <div>What People Are Saying:</div>
-      <div className="bodybox">
-        <div id='chatboarder'>
+      <div id='chatboarder' className="bodybox scroll"> 
+        <div >
           {feeling?.map(({ _id, text, datetime }) => (
             <div className="chatlog" key={_id}>{text}&nbsp;{datetime}</div>
           ))}

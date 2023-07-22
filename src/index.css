@@ -57,14 +57,22 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-#chatbox {
+/* #chatbox {
   font: 20px arial, sans-serif;
   height: 22px;
   width: 100%;
-}
+} */
 
 .chatlog {
   font: 20px arial, sans-serif;
+}
+
+.scroll {
+  width: 600px;
+  height: 500px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: center;
 }
 
 #chatboarder {

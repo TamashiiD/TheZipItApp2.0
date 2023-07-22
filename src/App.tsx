@@ -42,8 +42,8 @@ function App() {
   return (
     <div className="App">
       <div>What People Are Saying:</div>
-      {feeling?.map(({ _id, text }) => (
-        <div key={_id}>{text}</div>
+      {feeling?.map(({ _id, text, datetime }) => (
+        <div key={_id}>{text} &nbsp; {datetime}</div>
       ))}
       <form onSubmit={handleSubmit}>
         <label>I've been holding back! What I really wanna say is...&nbsp;</label>

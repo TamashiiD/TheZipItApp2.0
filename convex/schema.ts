@@ -3,6 +3,7 @@ import { v } from "convex/values";
 
 export default defineSchema({
   sentiment: defineTable({
-    text: v.string()
+    text: v.string(),
+    datetime: v.string()
   }),
 });

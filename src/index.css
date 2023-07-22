@@ -46,6 +46,8 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  margin-top: 2rem;
+  margin-left: 2rem;
 }
 button:hover {
   border-color: #646cff;
@@ -54,6 +56,53 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+#chatbox {
+  font: 20px arial, sans-serif;
+  height: 22px;
+  width: 100%;
+}
+
+.chatlog {
+  font: 20px arial, sans-serif;
+}
+
+#chatboarder {
+  border-style: solid;
+  border-width: 3px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  padding-right: 20px;
+  padding-left: 15px;
+  border-radius: 15px;
+}
+
+#bodybox {
+  margin: auto;
+  max-width: 550px;
+  font: 15px arial, sans-serif;
+  background-color: white;
+  border-style: solid;
+  border-width: 1px;
+  padding-top: 20px;
+  padding-bottom: 25px;
+  padding-right: 25px;
+  padding-left: 25px;
+  box-shadow: 5px 5px 5px grey;
+  border-radius: 15px;
+}
+
+
+
+
+
+
+
+
 
 @media (prefers-color-scheme: light) {
   :root {

@@ -12,11 +12,9 @@ export const get = query({
 
 
 export const createSentiment = mutation({
-  args: { text: v.string() },
+  args: { text: v.string(), datetime: v.string() },
   handler: async (ctx, args) => {
-  const time : Date = new Date()
-  const datetime : string = time.toLocaleString()
-    await ctx.db.insert("sentiment", { text: args.text, datetime: datetime  });
+    await ctx.db.insert("sentiment", { text: args.text, datetime: args.datetime  });
     // do something with `taskId`
   },
 });

@@ -18,7 +18,9 @@ function App() {
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
-    postsomething({ text: statement })
+    const time : Date = new Date()
+  const datetime : string = time.toLocaleString()
+    postsomething({ text: statement, datetime: datetime })
     // Your form submission logic here
   };
 
@@ -43,7 +45,7 @@ function App() {
     <div className="App">
       <div>What People Are Saying:</div>
       {feeling?.map(({ _id, text, datetime }) => (
-        <div key={_id}>{text} &nbsp; {datetime}</div>
+        <div key={_id}>{text}{datetime}</div>
       ))}
       <form onSubmit={handleSubmit}>
         <label>I've been holding back! What I really wanna say is...&nbsp;</label>

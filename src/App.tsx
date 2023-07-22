@@ -3,7 +3,8 @@ import { useQuery } from "convex/react";
 import { api } from "../convex/_generated/api";
 import { useMutation } from "convex/react";
 import Badge from 'react-bootstrap/Badge'
-import { ChangeEvent, FormEventHandler, useState } from "react";
+import { ChangeEvent, FormEventHandler, useEffect, useState } from "react";
+import { useRef } from "react";
 //import { Placeholder } from "react-bootstrap";
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
   const [statement, setStatement] = useState("")
   const [button, setButtonOn] = useState(true)
   const [placeholder, setPlaceholder] = useState("")
+  const [newmessage, setNewmessage] = useState("")
 
   const characterLimit = 280
   const feeling = useQuery(api.sentiment.get);
@@ -24,6 +26,7 @@ function App() {
     const datetime: string = time.toLocaleString()
     postsomething({ text: statement, datetime: datetime })
     setPlaceholder("")
+    setNewmessage(newmessage + statement)
     // Your form submission logic here
   };
 
@@ -41,17 +44,28 @@ function App() {
     }
   };
 
+  const ref = useRef<HTMLDivElement>(null);
 
 
+   useEffect(() => {
+    if (newmessage.length) {
+      ref.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "end",
+      });
+    }
+  }, [newmessage.length]);
 
+  
   return (
     <div className="App">
       <div>What People Are Saying:</div>
       <div id='chatboarder' className="bodybox scroll"> 
         <div >
           {feeling?.map(({ _id, text, datetime }) => (
-            <div className="chatlog" key={_id}>{text}&nbsp;{datetime}</div>
+            <div className="chatlog" key={_id}>{datetime}&nbsp;{text}</div>
           ))}
+          <div ref={ref}/>
         </div>
       </div>
       <form onSubmit={handleSubmit}>

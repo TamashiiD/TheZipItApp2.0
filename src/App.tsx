@@ -13,7 +13,6 @@ function App() {
   const [button, setButtonOn] = useState(true)
   const [placeholder, setPlaceholder] = useState("")
   const [newmessage, setNewmessage] = useState("")
-  const scroll = true 
   const characterLimit = 280
   const feeling = useQuery(api.sentiment.get);
 
@@ -48,13 +47,20 @@ function App() {
 
 
   useEffect(() => {
-    if(scroll){
-       ref.current?.scrollIntoView({
+      ref.current?.scrollIntoView({
       behavior: "smooth",
       block: "end",
     });
-    }
-  }, [newmessage.length]);
+    
+  }, []);
+
+  useEffect(() => {
+    ref.current?.scrollIntoView({
+    behavior: "smooth",
+    block: "end",
+  });
+  
+}, [newmessage.length]);
 
 
   return (

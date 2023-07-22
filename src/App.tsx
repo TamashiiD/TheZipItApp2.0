@@ -47,27 +47,29 @@ function App() {
   const ref = useRef<HTMLDivElement>(null);
 
 
-   useEffect(() => {
-      ref.current?.scrollIntoView({
-        behavior: "smooth",
-        block: "end",
-      });
-    
+  useEffect(() => {
+    if(newmessage.length){
+       ref.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "end",
+    });
+    }
   }, [newmessage.length]);
 
-  
+
   return (
     <div className="App">
       <div>What People Are Saying:</div>
-      <div id='chatboarder' className="bodybox scroll"> 
+      <div id='chatboarder' className="bodybox scroll">
         <div >
           {feeling?.map(({ _id, text, datetime }) => (
             <div className="chatlog" key={_id}>
               <div className="dateandtime">{datetime}</div>&nbsp;
-              {text}</div>
+              <div>{text}</div>
+            </div>
           ))}
         </div>
-        <div ref={ref}/>
+        <div ref={ref} />
       </div>
       <form onSubmit={handleSubmit}>
         <label>I've been holding back! What I really wanna say is...&nbsp;</label>

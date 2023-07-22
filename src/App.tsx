@@ -31,7 +31,6 @@ function App() {
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const newStatement = e.target.value;
-    const characterLimit = 100;
     setPlaceholder(e.target.value)
     setStatement(newStatement);
 
@@ -40,6 +39,9 @@ function App() {
     }
     if (newStatement.length > characterLimit - 1) {
       setButtonOn(true);
+    }
+    if(newStatement.trim().length === 0){
+      setButtonOn(true)
     }
   };
 

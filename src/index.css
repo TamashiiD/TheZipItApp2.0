@@ -67,6 +67,7 @@ button:focus-visible {
   font: 20px arial, sans-serif;
   display: flex;
   flex-direction: row;
+  text-align: left;
 }
 .dateandtime{
   font: 15px italic;

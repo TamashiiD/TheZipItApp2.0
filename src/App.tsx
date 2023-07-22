@@ -45,15 +45,6 @@ function App() {
 
   const ref = useRef<HTMLDivElement>(null);
 
-
-  useEffect(() => {
-      ref.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "end",
-    });
-    
-  }, []);
-
   useEffect(() => {
     ref.current?.scrollIntoView({
     behavior: "smooth",
@@ -80,7 +71,7 @@ function App() {
       <form onSubmit={handleSubmit}>
         <label>I've been holding back! What I really wanna say is...&nbsp;</label>
         <input
-          type="text" name="chat" id="chatbox" placeholder={placeholder} onChange={handleChange} />
+          type="text" name="chat" id="chatbox" value={placeholder} onChange={handleChange} />
         <Badge
           className='mt-3'
           bg={`${statement.length > characterLimit ? 'danger' : 'primary'}`}>

@@ -15,7 +15,7 @@ export const createSentiment = mutation({
   args: { text: v.string() },
   handler: async (ctx, args) => {
   const time : Date = new Date()
-  const datetime : string = Date.toLocaleString()
+  const datetime : string = time.toLocaleString()
     await ctx.db.insert("sentiment", { text: args.text, datetime: datetime  });
     // do something with `taskId`
   },

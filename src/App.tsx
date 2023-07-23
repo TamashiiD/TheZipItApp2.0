@@ -45,10 +45,15 @@ function App() {
     }
   };
 
-  const ref = useRef<HTMLDivElement>(null);
+const scroll = document.getElementById("scrollhere")
+
+const handleclick = () => {
+  scroll?.scrollIntoView({ behavior: 'smooth' })
+
+}
 
   useEffect(() => {
-    ref.current?.scrollIntoView({
+    scroll?.scrollIntoView({
     behavior: "smooth",
     block: "end",
   });
@@ -59,6 +64,7 @@ function App() {
   return (
     <div className="App">
       <div>What People Are Saying:</div>
+      <button onClick={handleclick}>Scroll to Latest</button>
       <div id='chatboarder' className="bodybox scroll">
         <div >
           {feeling?.map(({ _id, text, datetime }) => (
@@ -68,7 +74,7 @@ function App() {
             </div>
           ))}
         </div>
-        <div ref={ref} />
+        <div id="scrollhere" />
       </div>
       <form onSubmit={handleSubmit}>
         <label>I've been holding back! What I really wanna say is...&nbsp;</label>

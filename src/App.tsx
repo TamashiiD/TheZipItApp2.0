@@ -66,7 +66,7 @@ const handleclick = () => {
       <button onClick={handleclick}>Scroll to Latest</button>
       <div id='chatboarder' className="bodybox scroll">
         <div >
-          {feeling?.map(({ _id, text, datetime }) => (
+          {feeling?.slice(-50).map(({ _id, text, datetime }) => (
             <div className="chatlog" key={_id}>
               <div className="dateandtime">{datetime}</div>&nbsp;
               <div className="messageboarder chatlog">{text}</div>

@@ -138,3 +138,33 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+
+@media (max-width: 480px) {
+  .body {
+    margin-right: 50px;
+    padding-left: 0%;
+  }
+  
+    .bodybox {
+      max-width: 225px;
+      max-height: 300px;
+      margin-right: 55px;
+    }
+  
+    .chatlog {
+      font: 12px arial, sans-serif;
+    }
+  
+    .form {
+      display: flex;
+      flex-direction: column;
+      margin-right: 5px;
+    }
+  
+    button{
+      margin-right: 20px;
+      margin-top: 20px;
+    }
+  
+  }

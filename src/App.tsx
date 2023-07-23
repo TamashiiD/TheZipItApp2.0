@@ -69,13 +69,14 @@ const handleclick = () => {
           {feeling?.map(({ _id, text, datetime }) => (
             <div className="chatlog" key={_id}>
               <div className="dateandtime">{datetime}</div>&nbsp;
-              <div className="messageboarder">{text}</div>
+              <div className="messageboarder chatlog">{text}</div>
             </div>
           ))}
         </div>
         <div id="scrollhere" />
       </div>
       <form onSubmit={handleSubmit}>
+        <div className="form">
         <label>I've been holding back! What I really wanna say is...&nbsp;</label>
         <input
           type="text" name="chat" id="chatbox" value={placeholder} onChange={handleChange} />
@@ -88,6 +89,7 @@ const handleclick = () => {
           disabled={button}>
           Share and then Zip It.
         </button>
+        </div>
       </form>
     </div>
   );

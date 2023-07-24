@@ -118,7 +118,10 @@ button:focus-visible {
   border-radius: 15px;
 }
 
-
+.ads{
+  display: flex;
+  flex-direction: column;
+}
 
 
 

@@ -91,8 +91,6 @@ const handleclick = () => {
         </button>
         </div>
       </form>
-      <script async="async" data-cfasync="false" src="//pl20141877.highwaycpmrevenue.com/0ebeb3a4be9db072d116b5c12851e470/invoke.js"></script>
-<div id="container-0ebeb3a4be9db072d116b5c12851e470"></div>
     </div>
   );
 }

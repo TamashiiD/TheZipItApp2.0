@@ -144,6 +144,10 @@ button:focus-visible {
 
 
 @media (max-width: 480px) {
+  .chatboarder{
+    margin-left: 20px;
+  }
+  
   .body {
     margin-right: 50px;
     padding-left: 0%;

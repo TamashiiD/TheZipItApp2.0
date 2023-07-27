@@ -146,7 +146,7 @@ button:focus-visible {
   border-radius: 8px;
 }
 #app{
-  
+  position: relative;
   margin-top: 400px;
   transform: translate(-50%, -50%);
   background-color: rgba(72, 93, 119, 0.8);

@@ -8,6 +8,10 @@ import { ChangeEvent, FormEventHandler, useEffect, useState } from "react";
 
 function App() {
 
+
+
+  
+
   const [statement, setStatement] = useState("")
   const [button, setButtonOn] = useState(true)
   const [placeholder, setPlaceholder] = useState("")

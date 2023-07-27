@@ -30,6 +30,9 @@ body {
   flex-direction: column;
   min-width: 320px;
   min-height: 100vh;
+  background-image: url(https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/img/demo-1-bg.jpg) ;
+  background-repeat: no-repeat;
+background-size: cover;
 }
 
 h1 {

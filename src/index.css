@@ -176,8 +176,8 @@ button:focus-visible {
 
 @media (max-width: 480px) {
   .App{
-   max-width: 250px;
-   max-height: 450px;
+   max-width: 450px;
+   max-height: 500px;
    margin-top: 300px;
   }
 
@@ -190,7 +190,7 @@ button:focus-visible {
   
     #chatboarder {
       max-width: 200px;
-      max-height: 250px;
+      max-height: 300px;
       padding-right: 15px ;
       
     }

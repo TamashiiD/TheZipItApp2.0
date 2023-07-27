@@ -24,6 +24,7 @@
 <body>
   <div id="large-header" class="large-header">
     <canvas id="demo-canvas"></canvas>
+  </div>
     <script>
       (function () {
     var width,
@@ -227,16 +228,32 @@
       return Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
     }
   })();
-  
     </script>
+<script>(function resize() {
+  width = window.innerWidth;
+  height = window.innerHeight;
 
-    <script async="async" data-cfasync="false" src="//pl20141877.highwaycpmrevenue.com/0ebeb3a4be9db072d116b5c12851e470/invoke.js"></script>
+  // Resize the canvas to match the window dimensions
+  canvas.width = width;
+  canvas.height = height;
+
+  // Update the large header height
+  largeHeader.style.height = height + "px";
+})();
+</script>
+<div className="overlay-div">
+
+  <script async="async" data-cfasync="false" src="//pl20141877.highwaycpmrevenue.com/0ebeb3a4be9db072d116b5c12851e470/invoke.js"></script>
+    
     <div id="container-0ebeb3a4be9db072d116b5c12851e470"></div>
 
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+</div>
 
-  </div>
+    
+
+  
 
 </body>
 <!-- 

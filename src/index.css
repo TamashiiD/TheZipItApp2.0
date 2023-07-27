@@ -127,7 +127,7 @@ button:focus-visible {
   flex-direction: column;
 }
 
-#container-0ebeb3a4be9db072d116b5c12851e470{
+.adsterra{
   margin-top: -850px;
 }
 
@@ -146,6 +146,10 @@ button:focus-visible {
   border-radius: 8px;
 }
 
+.anotherpage{
+  display: flex;
+  flex-direction: column;
+}
 
 @media (prefers-color-scheme: light) {
   :root {

@@ -80,6 +80,8 @@ button:focus-visible {
   display: flex;
   flex-direction: row;
   text-align: left;
+  color:#f9f9f9
+  
 }
 .dateandtime{
   font: 15px italic;
@@ -112,7 +114,7 @@ button:focus-visible {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(72, 93, 119, 0.99);
+  background-color: rgba(72, 93, 119, 0.9);
   padding: 20px;
   border-radius: 8px;
 }
@@ -129,7 +131,7 @@ button:focus-visible {
   padding-bottom: 25px;
   padding-right: 25px;
   padding-left: 25px;
-  box-shadow: 5px 5px 5px grey;
+  box-shadow: 5px 5px 5px rgb(128, 128, 128);
   border-radius: 15px;
 }
 #chatboarder {
@@ -152,6 +154,12 @@ button:focus-visible {
   flex-direction: column;
 }
 
+.form{
+  color: #f9f9f9;
+}
+.intro{
+  color:#f9f9f9
+}
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -167,18 +175,24 @@ button:focus-visible {
 
 
 @media (max-width: 480px) {
-  .chatboarder{
-    margin-left: 20px;
+  .App{
+   max-width: 250px;
+   max-height: 450px;
+   margin-top: 300px;
   }
+
+  
   
   .body {
     margin-right: 50px;
     padding-left: 0%;
   }
   
-    .bodybox {
-      max-width: 400px;
-      max-height: 500px;
+    #chatboarder {
+      max-width: 200px;
+      max-height: 250px;
+      padding-right: 15px ;
+      
     }
   
     .chatlog {
@@ -189,14 +203,21 @@ button:focus-visible {
       display: flex;
       flex-direction: column;
       margin-right: 5px;
+      font-size: 11px;
     }
   
     button{
       margin-right: 20px;
       margin-top: 20px;
+      max-width: 200px;
+      max-height: 50px;
+      font-size: small;
     }
     .dateandtime{
       font-size: 10px;
+    }
+    .adsterra{
+      margin-top: -650px;
     }
   
   }

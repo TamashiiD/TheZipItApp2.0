@@ -132,12 +132,12 @@ button:focus-visible {
 }
 
 #demo-canvas {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
 }
 .overlay-div {
-  position: relative;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -145,15 +145,14 @@ button:focus-visible {
   padding: 20px;
   border-radius: 8px;
 }
-#app{
-  position:fixed;
-  margin-top: 400px;
+.App{
+  position: absolute;
+  margin-top: 800px;
   transform: translate(-50%, -50%);
   background-color: rgba(72, 93, 119, 0.8);
   padding: 20px;
   border-radius: 8px;
 }
-
 
 @media (prefers-color-scheme: light) {
   :root {

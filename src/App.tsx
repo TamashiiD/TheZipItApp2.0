@@ -65,7 +65,7 @@ const handleclick = () => {
 
 
   return (
-    <div className="App">
+    <div className="overlay-div App">
       <div>What People Are Saying:</div>
       <button onClick={handleclick}>Scroll to Latest</button>
       <div id='chatboarder' className="bodybox scroll">

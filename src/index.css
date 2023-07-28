@@ -131,6 +131,7 @@ button:focus-visible {
   background-color: #1a1a1a00;
   color:white;
   margin-top: -70px;
+  
 }
 
 #bodybox {
@@ -246,7 +247,8 @@ color: black;
     }
     
     .ads{
-      margin-top: 250px;
+      margin-top: 315px;
+     
     }
   
   }

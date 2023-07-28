@@ -28,7 +28,8 @@ function App() {
     const datetime: string = time.toLocaleString()
     postsomething({ text: statement, datetime: datetime })
     setPlaceholder("")
-    setNewmessage(newmessage + statement)
+    setNewmessage(statement)
+    setButtonOn(true)
     // Your form submission logic here
   };
 

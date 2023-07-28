@@ -101,7 +101,8 @@ button:focus-visible {
 }
 
 .adsterra{
-  margin-top: -850px;
+  margin-top: -400px;
+  color:white
 }
 
 #demo-canvas {
@@ -149,17 +150,20 @@ button:focus-visible {
   border-radius: 15px;
 }
 
-.anotherpage{
-  display: flex;
-  flex-direction: column;
-}
-
 .form{
   color: #f9f9f9;
 }
 .intro{
-  color:#f9f9f9
+  color:#f9f9f9;
+  font-size: 25px;
 }
+
+.wholebody{
+  margin-top: -550px;
+}
+
+
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -177,8 +181,8 @@ button:focus-visible {
 @media (max-width: 480px) {
   .App{
    max-width: 450px;
-   max-height: 500px;
-   margin-top: 300px;
+   max-height: 700px;
+   margin-top: 200px;
   }
 
   
@@ -186,6 +190,7 @@ button:focus-visible {
   .body {
     margin-right: 50px;
     padding-left: 0%;
+    
   }
   
     #chatboarder {
@@ -217,7 +222,11 @@ button:focus-visible {
       font-size: 10px;
     }
     .adsterra{
-      margin-top: -650px;
+      margin-top: -200px;
     }
+    
   
   }
+
+
+  

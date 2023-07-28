@@ -83,11 +83,11 @@ const handleclick = () => {
         <div className="form">
         <label>I've been holding back! What I really wanna say is...&nbsp;</label>
         <input
-          type="text" name="chat" id="chatbox" value={placeholder} onChange={handleChange} />
+          type="text" name="chat" id="chatbox" value={placeholder} onChange={handleChange} />&nbsp;&nbsp;&nbsp;
         <Badge
           className='mt-3'
           bg={`${statement.length > characterLimit ? 'danger' : 'primary'}`}>
-          {statement.length}/{characterLimit}
+          {statement.length}/{characterLimit} 
         </Badge>
         <button
           disabled={button}>

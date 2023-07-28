@@ -170,7 +170,9 @@ button:focus-visible {
   
 }
 
-
+.entry__field{
+color: black;
+}
 
 @media (prefers-color-scheme: light) {
   :root {

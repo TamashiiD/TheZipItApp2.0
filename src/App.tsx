@@ -10,7 +10,7 @@ function App() {
 
 
 
-  
+
 
   const [statement, setStatement] = useState("")
   const [button, setButtonOn] = useState(true)
@@ -43,33 +43,34 @@ function App() {
     if (newStatement.length > characterLimit - 1) {
       setButtonOn(true);
     }
-    if(newStatement.trim().length === 0){
+    if (newStatement.trim().length === 0) {
       setButtonOn(true)
     }
   };
 
-const scroll = document.getElementById("scrollhere")
+  const scroll = document.getElementById("scrollhere")
 
-const handleclick = () => {
-  scroll?.scrollIntoView({ behavior: 'smooth' })
+  const handleclick = () => {
+    scroll?.scrollIntoView({ behavior: 'smooth' })
 
-}
+  }
 
   useEffect(() => {
     scroll?.scrollIntoView({
-    behavior: "smooth",
-    block: "end",
-  });
-  
-}, [newmessage.length]);
+      behavior: "smooth",
+      block: "end",
+    });
+
+  }, [newmessage.length]);
 
 
   return (
     <div className="overlay-div App">
+
       <div className="intro">What People Are Saying:</div>
       <button onClick={handleclick}>Scroll to Latest</button>
-      <div id='chatboarder' className="bodybox scroll">
-        <div >
+      <div id='chatboarder' className="chat bodybox scroll">
+        <div  >
           {feeling?.slice(-50).map(({ _id, text, datetime }) => (
             <div className="chatlog" key={_id}>
               <div className="dateandtime">{datetime}</div>&nbsp;
@@ -78,22 +79,24 @@ const handleclick = () => {
           ))}
         </div>
         <div id="scrollhere" />
+
       </div>
       <form onSubmit={handleSubmit}>
         <div className="form">
-        <label>I've been holding back! What I really wanna say is...&nbsp;</label>
-        <input
-          type="text" name="chat" id="chatbox" value={placeholder} onChange={handleChange} />&nbsp;&nbsp;&nbsp;
-        <Badge
-          className='mt-3'
-          bg={`${statement.length > characterLimit ? 'danger' : 'primary'}`}>
-          {statement.length}/{characterLimit} 
-        </Badge>
-        <button
-          disabled={button}>
-          Share and then Zip It.
-        </button>
+          <label>I've been holding back! What I really wanna say is...&nbsp;</label>
+          <input
+            type="text" name="chat" id="chatbox" value={placeholder} onChange={handleChange} />&nbsp;&nbsp;&nbsp;
+          <Badge
+            className='mt-3'
+            bg={`${statement.length > characterLimit ? 'danger' : 'primary'}`}>
+            {statement.length}/{characterLimit}
+          </Badge>
+          <button
+            disabled={button}>
+            Share and then Zip It.
+          </button>
         </div>
+
       </form>
     </div>
   );

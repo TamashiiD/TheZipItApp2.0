@@ -104,10 +104,7 @@ button:focus-visible {
   flex-direction: column;
 }
 
-.adsterra{
-  margin-top: -400px;
-  color:white
-}
+
 
 #demo-canvas {
   position: fixed;
@@ -122,6 +119,18 @@ button:focus-visible {
   background-color: rgba(72, 93, 119, 0.5);
   padding: 20px;
   border-radius: 8px;
+  
+}
+.adsterra{
+  margin-top: -200px;
+  color:white;
+  background-color: #1a1a1a00;
+
+}
+.ads{
+  background-color: #1a1a1a00;
+  color:white;
+  margin-top: -70px;
 }
 
 #bodybox {
@@ -233,7 +242,7 @@ color: black;
       font-size: 10px;
     }
     .adsterra{
-      margin-top: -200px;
+      margin-top: -90px;
     }
     
   

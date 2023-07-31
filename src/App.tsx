@@ -7,15 +7,11 @@ import { ChangeEvent, FormEventHandler, useEffect, useState } from "react";
 //import { Placeholder } from "react-bootstrap";
 
 function App() {
-
-
-
-
-
   const [statement, setStatement] = useState("")
   const [button, setButtonOn] = useState(true)
   const [placeholder, setPlaceholder] = useState("")
   const [newmessage, setNewmessage] = useState("")
+  const [ip, setIp] = useState(0)
   const characterLimit = 280
   const feeling = useQuery(api.sentiment.get);
 
@@ -24,12 +20,17 @@ function App() {
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
+    fetch('https://api.ipify.org?format=json')
+    .then(response => response.json())
+    .then(data => {setIp(data.ip);
+      console.log(data.ip)});
     const time: Date = new Date()
     const datetime: string = time.toLocaleString()
-    postsomething({ text: statement, datetime: datetime })
+    postsomething({ text: statement, datetime: datetime, ip: ip })
     setPlaceholder("")
     setNewmessage(statement)
     setButtonOn(true)
+   
     // Your form submission logic here
   };
 

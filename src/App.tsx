@@ -24,7 +24,6 @@ function App() {
   const [button, setButtonOn] = useState(true)
   const [placeholder, setPlaceholder] = useState("")
   const [newmessage, setNewmessage] = useState("")
-  const [ipadress, setIP] = useState("")
   const characterLimit = 280;
 
 
@@ -39,7 +38,7 @@ function App() {
     const time: Date = new Date()
     const datetime: string = time.toLocaleString()
     console.log(ipadress)
-    postsomething({ text: statement, datetime: datetime, ip: ipadress })
+    postsomething({ text: statement, datetime: datetime })
     setPlaceholder("")
     setNewmessage(statement)
     setButtonOn(true)
@@ -80,27 +79,7 @@ function App() {
 
  
  
-  useEffect(() => {
-    setCookie("aframecookie", "allow",7)
-    axios.get("https://api.ipify.org")
-    .then(res=> {
-axios.get(`http://api.ipstack.com/${res.data}`, {
-      params: {
-        
-        access_key: "bb84b3d3db30b3c1c681d7c30c149290"
-      },
-      headers: {
-        secure: true
-      }
-    })
-      .then(res => {
-        setIP(res.data.ip)
-      })
-      .catch(err => console.log(err));
-    })
-    
-    
-  }, [setIP,ipadress]);
+;
 
 
 

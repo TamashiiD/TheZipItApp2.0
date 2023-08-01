@@ -4,13 +4,27 @@ import { api } from "../convex/_generated/api";
 import { useMutation } from "convex/react";
 import Badge from 'react-bootstrap/Badge'
 import { ChangeEvent, FormEventHandler, useEffect, useState } from "react";
+import axios from "axios";
+
 //import { Placeholder } from "react-bootstrap";
+
+
+function setCookie(name:string, value:string, days:number) {
+  const expirationDate = new Date();
+  expirationDate.setDate(expirationDate.getDate() + days);
+  const cookieValue = encodeURIComponent(name) + "=" + encodeURIComponent(value) + ";expires=" + expirationDate.toUTCString() + ";path=/";
+document.cookie = cookieValue}
+
+
+
+
 
 function App() {
   const [statement, setStatement] = useState("")
   const [button, setButtonOn] = useState(true)
   const [placeholder, setPlaceholder] = useState("")
   const [newmessage, setNewmessage] = useState("")
+  const [ipadress, setIP] = useState("")
   const characterLimit = 280;
 
 
@@ -25,11 +39,10 @@ function App() {
     const time: Date = new Date()
     const datetime: string = time.toLocaleString()
 
-    postsomething({ text: statement, datetime: datetime })
+    postsomething({ text: statement, datetime: datetime, ip: ipadress })
     setPlaceholder("")
     setNewmessage(statement)
     setButtonOn(true)
-
     // Your form submission logic here
   };
 
@@ -54,7 +67,6 @@ function App() {
 
   const handleclick = () => {
     scroll?.scrollIntoView({ behavior: 'smooth' })
-
   }
 
   useEffect(() => {
@@ -64,6 +76,27 @@ function App() {
     });
 
   }, [newmessage.length]);
+
+
+ 
+ 
+  useEffect(() => {
+    setCookie("aframecookie", "allow",7)
+    axios.get("http://api.ipstack.com/134.201.250.155", {
+      params: {
+        
+        access_key: "bb84b3d3db30b3c1c681d7c30c149290"
+      },
+      headers: {
+        secure: true
+      }
+    })
+      .then(res => {
+        setIP(res.data.ip)
+      })
+      .catch(err => console.log(err));
+  }, [setIP,ipadress]);
+
 
 
   return (

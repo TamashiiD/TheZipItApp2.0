@@ -38,7 +38,7 @@ function App() {
     e.preventDefault();
     const time: Date = new Date()
     const datetime: string = time.toLocaleString()
-console.log(ipadress)
+    console.log(ipadress)
     postsomething({ text: statement, datetime: datetime, ip: ipadress })
     setPlaceholder("")
     setNewmessage(statement)
@@ -82,7 +82,9 @@ console.log(ipadress)
  
   useEffect(() => {
     setCookie("aframecookie", "allow",7)
-    axios.get("http://api.ipstack.com/134.201.250.155", {
+    axios.get("https://api.ipify.org")
+    .then(res=> {
+axios.get(`http://api.ipstack.com/${res.data}`, {
       params: {
         
         access_key: "bb84b3d3db30b3c1c681d7c30c149290"
@@ -95,6 +97,9 @@ console.log(ipadress)
         setIP(res.data.ip)
       })
       .catch(err => console.log(err));
+    })
+    
+    
   }, [setIP,ipadress]);
 
 

@@ -11,26 +11,25 @@ function App() {
   const [button, setButtonOn] = useState(true)
   const [placeholder, setPlaceholder] = useState("")
   const [newmessage, setNewmessage] = useState("")
-  const [ip, setIp] = useState(0)
-  const characterLimit = 280
+  const characterLimit = 280;
+
+
   const feeling = useQuery(api.sentiment.get);
+
 
   const postsomething = useMutation(api.sentiment.createSentiment)
 
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
-    fetch('https://api.ipify.org?format=json')
-    .then(response => response.json())
-    .then(data => {setIp(data.ip);
-      console.log(data.ip)});
     const time: Date = new Date()
     const datetime: string = time.toLocaleString()
-    postsomething({ text: statement, datetime: datetime, ip: ip })
+
+    postsomething({ text: statement, datetime: datetime })
     setPlaceholder("")
     setNewmessage(statement)
     setButtonOn(true)
-   
+
     // Your form submission logic here
   };
 
@@ -38,6 +37,7 @@ function App() {
     const newStatement = e.target.value;
     setPlaceholder(e.target.value)
     setStatement(newStatement);
+
 
     if (newStatement.length <= characterLimit) {
       setButtonOn(false);

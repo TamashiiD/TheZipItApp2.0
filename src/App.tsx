@@ -4,18 +4,8 @@ import { api } from "../convex/_generated/api";
 import { useMutation } from "convex/react";
 import Badge from 'react-bootstrap/Badge'
 import { ChangeEvent, FormEventHandler, useEffect, useState } from "react";
-import axios from "axios";
 
 //import { Placeholder } from "react-bootstrap";
-
-
-function setCookie(name:string, value:string, days:number) {
-  const expirationDate = new Date();
-  expirationDate.setDate(expirationDate.getDate() + days);
-  const cookieValue = encodeURIComponent(name) + "=" + encodeURIComponent(value) + ";expires=" + expirationDate.toUTCString() + ";path=/";
-document.cookie = cookieValue}
-
-
 
 
 
@@ -37,7 +27,6 @@ function App() {
     e.preventDefault();
     const time: Date = new Date()
     const datetime: string = time.toLocaleString()
-    console.log(ipadress)
     postsomething({ text: statement, datetime: datetime })
     setPlaceholder("")
     setNewmessage(statement)

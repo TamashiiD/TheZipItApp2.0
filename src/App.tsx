@@ -38,7 +38,7 @@ function App() {
     e.preventDefault();
     const time: Date = new Date()
     const datetime: string = time.toLocaleString()
-
+console.log(ipadress)
     postsomething({ text: statement, datetime: datetime, ip: ipadress })
     setPlaceholder("")
     setNewmessage(statement)

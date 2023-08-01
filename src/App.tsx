@@ -66,11 +66,6 @@ function App() {
   }, [newmessage.length]);
 
 
- 
- 
-;
-
-
 
   return (
     <div className="overlay-div App">

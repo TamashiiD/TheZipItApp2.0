@@ -1,5 +1,5 @@
 import "./App.css";
-import { useQuery } from "convex/react";
+// import { useQuery } from "convex/react";
 import { api } from "../convex/_generated/api";
 import { useMutation } from "convex/react";
 import Badge from 'react-bootstrap/Badge'
@@ -17,7 +17,7 @@ function App() {
   const characterLimit = 280;
 
 
-  const feeling = useQuery(api.sentiment.get);
+  // const feeling = useQuery(api.sentiment.get);
 
 
   const postsomething = useMutation(api.sentiment.createSentiment)

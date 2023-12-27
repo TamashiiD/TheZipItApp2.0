@@ -74,12 +74,13 @@ function App() {
       <button onClick={handleclick}>Scroll to Latest</button>
       <div id='chatboarder' className="chat bodybox scroll">
         <div  >
-          {feeling?.slice(20).map(({ _id, text, datetime }) => (
+          SAMPLE TEXT HERE
+          {/* {feeling?.slice(20).map(({ _id, text, datetime }) => (
             <div className="chatlog" key={_id}>
               <div className="dateandtime">{datetime}</div>&nbsp;
               <div className="messageboarder chatlog">{text}</div>
             </div>
-          ))}
+          ))} */}
         </div>
         <div id="scrollhere" />
 
